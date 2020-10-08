@@ -17,7 +17,10 @@ class Player {
       playerCount: count
     });
   }
-
+  removePlayers(){ 
+    var playerRef = database.ref("players")
+    playerRef.remove();
+  }
   update(){
     var playerIndex = "players/player" + this.index;
     database.ref(playerIndex).set({
